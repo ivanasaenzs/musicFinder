@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/.css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Music finder</title>
     <!-- Font awesome -->
     <script
@@ -12,7 +12,7 @@
     ></script>
   </head>
   <body>
-    <!-- NAV -->
+    <!-- HEADER & NAV -->
     <header>
       <nav class="nav-wrapper">
         <div class="main-nav">
@@ -97,7 +97,7 @@
     </main>
 
     <!-- Individual artist details -->
-    <div class="artist-details hidden">
+    <div id="artists-details" class="artist-details hidden">
       <p class="homepage">< Take me back <</p>
       <div class="artist-info">
         <h2>Artist name</h2>
@@ -180,8 +180,8 @@
         <label for="edit-artist-img">Artist Image (URL):</label>
         <input type="text" id="edit-artist-img" />
         <div class="btn-container">
-          <button class="edit-btn" id="edit-artist-btn">Edit Artist</button>
-          <button class="cancel-btn" id="cancel-edit">Cancel</button>
+          <button id="edit-artist-btn" class="edit-btn">Edit Artist</button>
+          <button id="cancel-edit" class="cancel-btn">Cancel</button>
         </div>
       </form>
     </section>

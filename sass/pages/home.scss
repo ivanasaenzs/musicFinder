@@ -1,0 +1,37 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  .card {
+    border: 2px dotted red;
+    margin: 5px 10px;
+    padding-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+
+    @include breakpoint() {
+      width: calc(33.33% - 20px);
+    }
+
+    .card-title {
+      padding-bottom: 5px;
+      margin: 6px 12px;
+    }
+
+    .card-biography {
+      color: green;
+      margin: 4px 12px 14px 12px;
+    }
+
+    .card-btn {
+      border: none;
+      margin-left: auto;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+}

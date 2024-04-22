@@ -1,0 +1,15 @@
+footer {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #333;
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    .footer-second-legend {
+      margin-top: 12px;
+    }
+  }
+}
