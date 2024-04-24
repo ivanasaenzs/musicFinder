@@ -80,11 +80,13 @@
         <option value="male-lead">Male-Lead</option>
         <option value="solo">Solo Artist</option>
       </select>
-      <input type="button" value="Search" class="search-btn" />
-      <input type="button" value="Clear" class="clear-btn" />
+      <div class="btn-container">
+        <input type="button" value="Search" class="search-btn" />
+        <input type="button" value="Clear" class="clear-btn" />
+      </div>
     </form>
     <!-- SPINNER -->
-    <div id="spinner-container" class="spinner-container">
+    <div id="spinner-container" class="spinner-container hidden">
       <img
         src="/assets/bars-scale-middle.svg"
         alt="loading content spinner image"
@@ -93,42 +95,101 @@
     </div>
     <!-- MAIN CONTAINER -->
     <main id="card-container" class="card-container">
-      <!-- JS Render -->
-    </main>
+      <!-- RENDER-->
+      <!-- INDIVIDUAL CARD DETAILS -->
+      <div id="artists-details" class="artist-details">
+        <p class="homepage">< Take me back <</p>
+        <div class="artist-info">
+          <h2>Artist name</h2>
+          <div>
+            <h4>About</h4>
+            <p id="artist-bio" class="artist-bio">
+              Artist bio: Lorem ipsum dolor sit amet consectetur, adipisicing
+              elit. Incidunt omnis nobis architecto laborum dolorem, ab officiis
+              sint obcaecati sit cumque consequatur temporibus facilis veritatis
+              magni tempora, dolorum maxime culpa quis?
+            </p>
+          </div>
+        </div>
 
-    <!-- Individual artist details -->
-    <div id="artists-details" class="artist-details hidden">
-      <p class="homepage">< Take me back <</p>
-      <div class="artist-info">
-        <h2>Artist name</h2>
-        <div>
-          <h4>About</h4>
-          <p>
-            Artist bio: Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Incidunt omnis nobis architecto laborum dolorem, ab officiis
-            sint obcaecati sit cumque consequatur temporibus facilis veritatis
-            magni tempora, dolorum maxime culpa quis?
-          </p>
+        <img
+          src="https://pbs.twimg.com/media/FwP-YTHWwAAHi0y?format=jpg&name=medium"
+          alt="artist image"
+        />
+
+        <div class="more-details">
+          <p>genre</p>
+          <p>active since ${year}</p>
+          <p>origin</p>
+          <p>artist type</p>
+        </div>
+        <div class="btn-container">
+          <button class="edit-btn" id="edit-artist">Edit Artist</button>
+          <button class="delete-btn" id="delete-artist">Delete</button>
         </div>
       </div>
-
-      <img src="" alt="artist image" />
-
-      <div class="more-details">
-        <p>genre</p>
-        <p>active since ${year}</p>
-        <p>origin</p>
-        <p>artist type</p>
-      </div>
-      <div class="btn-container">
-        <button class="edit-btn" id="edit-artist">Edit</button>
-        <button class="delete-btn" id="delete-artist">Delete</button>
-      </div>
-    </div>
-
-    <!-- Edit artist form -->
-    <section id="edit-artist-section" class="edit-artist-section hidden">
-      <form id="edit-artist-form" class="edit-artist-form">
+      <!-- ADD ARTIST form -->
+      <!-- <section id="add-artist-section" class="add-artist-section"> -->
+      <form id="add-artist-form" class="add-artist-form hidden">
+        <!-- Artist name input -->
+        <label for="artist-name">Artist Name:</label>
+        <input type="text" id="artist-name" />
+        <!-- Biography input -->
+        <label for="add-biography">Biography:</label>
+        <textarea id="add-biography" cols="20" rows="5"></textarea>
+        <!-- Genre select -->
+        <label for="add-genre">Genre:</label>
+        <select name="genre" id="add-genre">
+          <option value="genre" selected disabled>Choose genre</option>
+          <option value="country">Country</option>
+          <option value="edm">EDM</option>
+          <option value="indie">Indie</option>
+          <option value="kpop">K-pop</option>
+          <option value="rock">Rock</option>
+          <option value="metal">Metal</option>
+          <option value="pop">Pop</option>
+        </select>
+        <!-- Formation years select -->
+        <label for="add-active-since">Formation:</label>
+        <select name="active-since" id="add-active-since">
+          <option value="active-since" selected disabled>Active since</option>
+          <option value="1970s">1970s or before</option>
+          <option value="1980s">1980s</option>
+          <option value="1990s">1990s</option>
+          <option value="2000s">2000s</option>
+          <option value="2010s">2010s</option>
+          <option value="2020s">2020s</option>
+        </select>
+        <!-- Origin select -->
+        <label for="add-artist-origin">Origin:</label>
+        <select name="origin" id="add-artist-origin">
+          <option value="origin" selected disabled>Artist origin</option>
+          <option value="africa">Africa</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="uk-europe">UK & Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+        <!-- Members select -->
+        <label for="add-type-members">Members:</label>
+        <select name="members" id="add-type-members">
+          <option value="members" selected disabled>The artist is...</option>
+          <option value="female-lead">Female-Lead</option>
+          <option value="male-lead">Male-Lead</option>
+          <option value="solo">Solo Artist</option>
+        </select>
+        <!-- Artist image input -->
+        <label for="artist-img">Artist Image (URL):</label>
+        <input type="text" id="artist-img" />
+        <div class="btn-container">
+          <button id="add-artist-btn" class="add-btn">Add New Artist</button>
+          <button id="cancel-edit" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+      <!-- </section> -->
+      <!-- EDIT ARTIST FORM -->
+      <!-- <section id="edit-artist-section" class="edit-artist-section"> -->
+      <form id="edit-artist-form" class="edit-artist-form hidden">
         <!-- Artist name input -->
         <label for="edit-artist-name">Artist Name:</label>
         <input type="text" id="edit-artist-name" />
@@ -181,66 +242,11 @@
         <input type="text" id="edit-artist-img" />
         <div class="btn-container">
           <button id="edit-artist-btn" class="edit-btn">Edit Artist</button>
-          <button id="cancel-edit" class="cancel-btn">Cancel</button>
+          <button id="cancel-edit-btn" class="cancel-btn">Cancel</button>
         </div>
       </form>
-    </section>
-
-    <!-- ADD Artist form -->
-    <section id="add-artist-section" class="add-artist-section hidden">
-      <form id="add-artist-form" class="add-artist-form">
-        <!-- Artist name input -->
-        <label for="artist-name">Artist Name:</label>
-        <input type="text" id="artist-name" />
-        <!-- Biography input -->
-        <label for="add-biography">Biography:</label>
-        <textarea id="add-biography" cols="20" rows="5"></textarea>
-        <!-- Genre select -->
-        <label for="add-genre">Genre:</label>
-        <select name="genre" id="add-genre">
-          <option value="genre" selected disabled>Choose genre</option>
-          <option value="country">Country</option>
-          <option value="edm">EDM</option>
-          <option value="indie">Indie</option>
-          <option value="kpop">K-pop</option>
-          <option value="rock">Rock</option>
-          <option value="metal">Metal</option>
-          <option value="pop">Pop</option>
-        </select>
-        <!-- Formation years select -->
-        <label for="add-active-since">Formation:</label>
-        <select name="active-since" id="add-active-since">
-          <option value="active-since" selected disabled>Active since</option>
-          <option value="1970s">1970s or before</option>
-          <option value="1980s">1980s</option>
-          <option value="1990s">1990s</option>
-          <option value="2000s">2000s</option>
-          <option value="2010s">2010s</option>
-          <option value="2020s">2020s</option>
-        </select>
-        <!-- Origin select -->
-        <label for="add-artist-origin">Origin:</label>
-        <select name="origin" id="add-artist-origin">
-          <option value="origin" selected disabled>Artist origin</option>
-          <option value="africa">Africa</option>
-          <option value="america">America</option>
-          <option value="asia">Asia</option>
-          <option value="uk-europe">UK & Europe</option>
-          <option value="oceania">Oceania</option>
-        </select>
-        <!-- Members select -->
-        <label for="add-type-members">Members:</label>
-        <select name="members" id="add-type-members">
-          <option value="members" selected disabled>The artist is...</option>
-          <option value="female-lead">Female-Lead</option>
-          <option value="male-lead">Male-Lead</option>
-          <option value="solo">Solo Artist</option>
-        </select>
-        <!-- Artist image input -->
-        <label for="artist-img">Artist Image (URL):</label>
-        <input type="text" id="artist-img" />
-      </form>
-    </section>
+      <!-- </section> -->
+    </main>
     <!-- FOOTER -->
     <footer id="footer">
       <div class="footer-content">
