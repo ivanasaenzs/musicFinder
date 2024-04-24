@@ -12,11 +12,11 @@ const getArtist = (fetchUrl) => {
 getArtist(baseUrl);
 
 const renderArtist = (artists) => {
-  $("#card-container").innerHTML = "";
   artists.forEach((artist) => {
     const { biography, id, name } = artist;
     console.log(name, id);
-    $("#card-container").innerHTML += `<div class="card">
+    $(".all-cards").innerHTML += `
+    <div class="card">
        <h2 class="card-title">${name}</h2>
        <p class="card-biography">
        ${biography}
@@ -27,7 +27,8 @@ const renderArtist = (artists) => {
           <p>origin</p>
           <p>artist type</p>
         </div>
-       <button class="card-btn data-cardId="${id}">Click for more</button>
-      </div>`;
+       <button class="card-btn" data-cardId="${id}">Click for more</button>
+      </div>
+      `;
   });
 };

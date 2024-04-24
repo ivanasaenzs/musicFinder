@@ -129,12 +129,12 @@ footer .footer-content .footer-second-legend {
   margin-top: 15px;
 }
 
-.card-container {
+.all-cards {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
-.card-container .card {
+.all-cards .card {
   display: flex;
   flex-direction: column;
   margin: 5px 10px;
@@ -144,29 +144,29 @@ footer .footer-content .footer-second-legend {
   border: 2px dotted #000;
 }
 @media (min-width: 970px) {
-  .card-container .card {
+  .all-cards .card {
     width: calc(33.33% - 20px);
   }
 }
-.card-container .card .card-title {
+.all-cards .card .card-title {
   padding-bottom: 5px;
   margin: 6px 12px;
 }
-.card-container .card .card-biography {
+.all-cards .card .card-biography {
   margin: 4px 12px 14px 12px;
 }
-.card-container .card .more-details-homepage {
+.all-cards .card .more-details-homepage {
   display: flex;
   margin: auto 4px 10px 12px;
   text-align: center;
 }
-.card-container .card .more-details-homepage p {
+.all-cards .card .more-details-homepage p {
   margin: 0 0 8px 10px;
   padding: 5px;
   border: 1px solid #000;
   border-radius: 5px;
 }
-.card-container .card .card-btn {
+.all-cards .card .card-btn {
   margin: 10px 0 0 auto;
   position: absolute;
   bottom: 10px;
