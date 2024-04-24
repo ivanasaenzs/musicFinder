@@ -20,25 +20,26 @@ body {
 .nav-wrapper .main-nav {
   display: flex;
   align-items: center;
-  padding: 10px 18px;
+  padding: 0 18px;
   flex: 1;
 }
 .nav-wrapper .main-nav h1 {
   margin-right: 10px;
-  font-size: 25px;
+  font-size: 24px;
 }
 .nav-wrapper .main-nav p {
-  margin-top: 5px;
   font-size: 16px;
   color: #555;
 }
 .nav-wrapper .nav-list {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .nav-wrapper .nav-list .nav-item {
   font-weight: 300;
-  margin: 15px;
+  margin: 0 15px;
 }
 .nav-wrapper .nav-list .nav-item a {
   text-decoration: none;
@@ -128,12 +129,12 @@ footer .footer-content .footer-second-legend {
   margin-top: 15px;
 }
 
-.all-cards {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
-.all-cards .card {
+.card-container .card {
   display: flex;
   flex-direction: column;
   margin: 5px 10px;
@@ -143,29 +144,29 @@ footer .footer-content .footer-second-legend {
   border: 2px dotted #000;
 }
 @media (min-width: 970px) {
-  .all-cards .card {
+  .card-container .card {
     width: calc(33.33% - 20px);
   }
 }
-.all-cards .card .card-title {
+.card-container .card .card-title {
   padding-bottom: 5px;
   margin: 6px 12px;
 }
-.all-cards .card .card-biography {
+.card-container .card .card-biography {
   margin: 4px 12px 14px 12px;
 }
-.all-cards .card .more-details-homepage {
+.card-container .card .more-details-homepage {
   display: flex;
   margin: auto 4px 10px 12px;
   text-align: center;
 }
-.all-cards .card .more-details-homepage p {
+.card-container .card .more-details-homepage p {
   margin: 0 0 8px 10px;
   padding: 5px;
   border: 1px solid #000;
   border-radius: 5px;
 }
-.all-cards .card .card-btn {
+.card-container .card .card-btn {
   margin: 10px 0 0 auto;
   position: absolute;
   bottom: 10px;
