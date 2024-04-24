@@ -1,24 +1,59 @@
 .artist-details {
   max-width: 800px;
-  border: 2px solid black;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid black;
+
+  .homepage {
+    font-size: 16px;
+    margin: 12px 0;
+  }
 
   .artist-info {
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
   }
 
   img {
     width: 260px;
     height: auto;
+    padding: 5px;
+    border: 2px solid #000;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+      margin-right: 8px;
+      margin-bottom: 5px;
+      padding: 5px;
+      border-radius: $primary-border-radius;
+      border: none;
+    }
   }
 }
 
 .more-details {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  p {
+    margin: 20px 5px 20px 10px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: $primary-border-radius;
+  }
 }

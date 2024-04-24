@@ -1,40 +1,60 @@
 .search-form {
   display: flex;
   justify-content: center;
-  margin: 20px;
-}
+  margin: 20px 5px;
 
-.edit-artist-section {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 35px;
-  padding: 20px;
-  border: 1px solid #000;
+  select {
+    width: 20%;
+    margin: 8px;
+    border-radius: $primary-border-radius;
+  }
 
-  .edit-artist-form {
-    display: flex;
-    flex-direction: column;
+  .btn-container {
+    margin: 8px;
+    padding: 5px;
 
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-
-      .edit-btn {
-        margin-right: 8px;
-      }
+    .search-btn,
+    .clear-btn {
+      padding: 3px;
+      border-radius: $primary-border-radius;
     }
   }
 }
 
-.add-artist-section {
-  background-color: lightcoral;
-  width: 60%;
+.add-artist-form,
+.edit-artist-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
+  border-radius: $primary-border-radius;
+  background-color: lightblue;
 
-  .add-artist-form {
+  label {
+    margin: 10px 2px;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 85%;
+    height: 25px;
+    margin: 0 auto;
+    border-radius: $primary-border-radius;
+  }
+
+  .btn-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+      margin-right: 8px;
+      padding: 5px;
+      border-radius: $primary-border-radius;
+      border: none;
+    }
   }
 }
