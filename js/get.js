@@ -2,32 +2,38 @@ const $ = (selector) => document.querySelector(selector);
 
 baseUrl = "https://661ae13565444945d04eb357.mockapi.io/api/artists";
 
-const getArtist = (fetchUrl) => {
+const getArtists = (fetchUrl) => {
   fetch(fetchUrl)
     .then((res) => res.json())
-    .then((data) => renderArtist(data))
+    .then((data) => renderArtists(data))
     .catch((error) => console.error(error));
 };
 
-getArtist(baseUrl);
+getArtists(baseUrl);
 
-const renderArtist = (artists) => {
-  $("#card-container").innerHTML = "";
-  artists.forEach((artist) => {
-    const { biography, id, name } = artist;
-    console.log(name, id);
-    $("#card-container").innerHTML += `<div class="card">
+const renderArtists = (artists) => {
+  renderSpinner();
+  setTimeout(() => {
+    hideSpinner();
+    artists.forEach((artist) => {
+      const { activeSince, biography, genre, id, name, origin, members } =
+        artist;
+      console.log(name, id);
+      $(".all-cards").innerHTML += `
+    <div class="card">
        <h2 class="card-title">${name}</h2>
        <p class="card-biography">
        ${biography}
        </p>
         <div class="more-details-homepage">
-          <p>genre</p>
-          <p>active since</p>
-          <p>origin</p>
-          <p>artist type</p>
+          <p>${genre}</p>
+          <p>${activeSince}</p>
+          <p>${origin}</p>
+          <p>${members}</p>
         </div>
-       <button class="card-btn data-cardId="${id}">Click for more</button>
-      </div>`;
-  });
+       <button class="card-btn" data-cardId="${id}">Click for more</button>
+      </div>   
+      `;
+    });
+  }, 2000);
 };
