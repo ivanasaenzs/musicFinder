@@ -11,7 +11,7 @@ const getArtists = (fetchUrl) => {
 
 getArtists(baseUrl);
 
-const renderArtist = (artists) => {
+const renderArtists = (artists) => {
   artists.forEach((artist) => {
     const { biography, id, name } = artist;
     console.log(name, id);
