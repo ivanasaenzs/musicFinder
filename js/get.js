@@ -13,9 +13,9 @@ getArtists(baseUrl);
 
 const renderArtists = (artists) => {
   artists.forEach((artist) => {
-    const { biography, id, name } = artist;
+    const { biography, id, name, activeSince, members, genre } = artist;
     console.log(name, id);
-    $(".all-cards").innerHTML += `
+    $("#all-cards").innerHTML += `
     <div class="card">
        <h2 class="card-title">${name}</h2>
        <p class="card-biography">
