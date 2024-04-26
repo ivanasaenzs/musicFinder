@@ -22,6 +22,7 @@ const cancelAdd = () => {
 // Show the add form
 const showAddForm = () => {
   $("#all-cards").classList.add("hidden");
+  $("#individual-card-container").classList.add("hidden");
   $("#add-artist-form").classList.remove("hidden");
 };
 
@@ -58,7 +59,7 @@ $("#add-artist-form").addEventListener("submit", (e) => {
         $("#add-artist-form").reset();
         $("#add-artist-form").classList.add("hidden");
         $("#all-cards").classList.remove("hidden");
-        getArtist(baseUrl);
+        getArtists(baseUrl);
       } else {
         alert("Oops! An error has occurred");
       }
