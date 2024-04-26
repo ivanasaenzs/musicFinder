@@ -11,15 +11,11 @@ const getArtists = (fetchUrl) => {
 
 getArtists(baseUrl);
 
-const renderArtists = (artists) => {
-  renderSpinner();
-  setTimeout(() => {
-    hideSpinner();
-    artists.forEach((artist) => {
-      const { activeSince, biography, genre, id, name, origin, members } =
-        artist;
-      console.log(name, id);
-      $(".all-cards").innerHTML += `
+const renderArtist = (artists) => {
+  artists.forEach((artist) => {
+    const { biography, id, name } = artist;
+    console.log(name, id);
+    $(".all-cards").innerHTML += `
     <div class="card">
        <h2 class="card-title">${name}</h2>
        <p class="card-biography">
@@ -32,8 +28,7 @@ const renderArtists = (artists) => {
           <p>${members}</p>
         </div>
        <button class="card-btn" data-cardId="${id}">Click for more</button>
-      </div>   
+      </div>
       `;
-    });
-  }, 2000);
+  });
 };
