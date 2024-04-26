@@ -35,6 +35,7 @@ $("#add-artist-form").addEventListener("submit", (e) => {
 
   const newArtist = {
     name: $("#artist-name").value,
+    activeSince: $("#add-active-since").value,
     biography: $("#add-biography").value,
     genre: $("#add-genre").value,
     origin: $("#add-artist-origin").value,
