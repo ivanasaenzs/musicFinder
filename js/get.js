@@ -13,16 +13,23 @@ const getArtists = (fetchUrl) => {
 // Function to render the list of artists on the homepage
 const renderArtists = (artists) => {
   artists.forEach((artist) => {
-    const { biography, id, name, activeSince, members, genre, origin } = artist;
+    const { biography, id, name, activeSince, members, genre } = artist;
     $("#all-cards").innerHTML += `
       <div class="card" data-cardid="${id}">
         <h2 class="card-title">${name}</h2>
-        <p class="card-biography">${biography}</p>
+        <p class="card-biography">
+        ${biography}
+        </p>
         <div class="more-details-homepage">
-          <p>${genre}</p>
-          <p>${activeSince}</p>
-          <p>${origin}</p>
-          <p>${members}</p>
+          <p>
+          ${genre}
+          </p>
+          <p>
+          ${activeSince}
+          </p>
+          <p>
+          ${members}
+          </p>
         </div>
         <button class="card-btn" data-cardid="${id}">Click for more</button>
       </div>`;
@@ -60,20 +67,30 @@ const renderDetails = (artist) => {
 
     $("#individual-card-container").innerHTML = `
       <div class="artist-details">
-        <p class="homepage">< Take me back <</p>
+        <a href="javascript:void(0)" class="homepage">< Take me back <</a>
         <div class="artist-info">
           <h2>${name}</h2>
           <div>
             <h4>About</h4>
-            <p class="artist-bio">${biography}</p>
+            <p class="artist-bio">
+            ${biography}
+            </p>
           </div>
         </div>
         <img src="${image}" alt="${name}" />
         <div class="more-details">
-          <p>${genre}</p>
-          <p>${activeSince}</p>
-          <p>${origin}</p>
-          <p>${members}</p>
+          <p>
+          ${genre}
+          </p>
+          <p>
+          ${activeSince}
+          </p>
+          <p>
+          ${origin}
+          </p>
+          <p>
+          ${members}
+          </p>
         </div>
         <div class="btn-container">
           <button class="edit-btn" data-cardid="${id}">Edit Artist</button>
