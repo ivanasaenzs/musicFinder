@@ -63,8 +63,13 @@ $("#add-artist-form").addEventListener("submit", (e) => {
       if (data) {
         $("#add-artist-form").reset();
         $("#add-artist-form").classList.add("hidden");
-        $("#all-cards").classList.remove("hidden");
-        getArtists(baseUrl);
+        renderSpinner();
+
+        setTimeout(() => {
+          hideSpinner();
+          $("#all-cards").classList.remove("hidden");
+          getArtists(baseUrl);
+        }, 2000);
       } else {
         alert("Oops! An error has occurred");
       }
