@@ -67,6 +67,7 @@ $("#add-artist-form").addEventListener("submit", (e) => {
 
         setTimeout(() => {
           hideSpinner();
+          $("#all-cards").innerHTML = "";
           $("#all-cards").classList.remove("hidden");
           getArtists(baseUrl);
         }, 2000);
