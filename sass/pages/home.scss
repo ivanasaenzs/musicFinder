@@ -9,8 +9,9 @@
     margin: 5px 10px;
     padding-bottom: 20px;
     position: relative;
-    width: calc(100% - 20px);
+    width: 100%;
     border: 2px dotted #000;
+    word-wrap: break-word;
 
     @include breakpoint() {
       width: calc(33.33% - 20px);

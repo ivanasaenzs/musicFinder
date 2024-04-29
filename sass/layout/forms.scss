@@ -1,22 +1,31 @@
-.search-form {
+.filter-form-wrapper {
   display: flex;
-  justify-content: center;
-  margin: 20px 5px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 
-  select {
-    width: 20%;
-    margin: 8px;
-    border-radius: $primary-border-radius;
-  }
+  .search-form {
+    display: flex;
+    margin: 20px 2px;
 
-  .btn-container {
-    margin: 8px;
-    padding: 5px;
-
-    .search-btn,
-    .clear-btn {
-      padding: 3px;
+    select {
+      margin: 8px;
       border-radius: $primary-border-radius;
+    }
+
+    .btn-container {
+      margin: 8px;
+      width: 100%;
+      padding: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .search-btn,
+      .clear-btn {
+        margin: 4px;
+        padding: 3px;
+        border-radius: $primary-border-radius;
+      }
     }
   }
 }
