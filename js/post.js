@@ -9,9 +9,8 @@ const hideSpinner = () => {
 
 // Cancel add operation
 const cancelAdd = () => {
-  $("#add-artist-form").classList.add("hidden");
-
   renderSpinner();
+  $("#add-artist-form").classList.add("hidden");
 
   setTimeout(() => {
     hideSpinner();
@@ -22,7 +21,13 @@ const cancelAdd = () => {
 // Show the add form
 const showAddForm = () => {
   $("#all-cards").classList.add("hidden");
-  $("#add-artist-form").classList.remove("hidden");
+  $("#individual-card-container").classList.add("hidden");
+  renderSpinner();
+
+  setTimeout(() => {
+    hideSpinner();
+    $("#add-artist-form").classList.remove("hidden");
+  }, 2000);
 };
 
 $("#cancel-add").addEventListener("click", cancelAdd);
@@ -34,6 +39,7 @@ $("#add-artist-form").addEventListener("submit", (e) => {
 
   const newArtist = {
     name: $("#artist-name").value,
+    activeSince: $("#add-active-since").value,
     biography: $("#add-biography").value,
     genre: $("#add-genre").value,
     origin: $("#add-artist-origin").value,
@@ -57,8 +63,10 @@ $("#add-artist-form").addEventListener("submit", (e) => {
       if (data) {
         $("#add-artist-form").reset();
         $("#add-artist-form").classList.add("hidden");
+        $("#all-cards").innerHTML = "";
         $("#all-cards").classList.remove("hidden");
-        getArtist(baseUrl);
+
+        getArtists(baseUrl);
       } else {
         alert("Oops! An error has occurred");
       }

@@ -16,10 +16,12 @@
     <header>
       <nav class="nav-wrapper">
         <div class="main-nav">
-          <h1>musicFinder</h1>
+          <a href="javascript:void(0)" id="homepage-link"
+            ><h1>musicFinder</h1></a
+          >
           <p>Find new music to love!</p>
+          <button id="add-btn-nav">Add artist</button>
         </div>
-        <button id="add-btn-nav">Add artist</button>
       </nav>
     </header>
     <!-- SEARCH FILTERS -->
@@ -96,39 +98,11 @@
       <div id="all-cards" class="all-cards">
         <!-- MAIN PAGE - ALL CARDS RENDER -->
       </div>
-      <!-- INDIVIDUAL CARD DETAILS -->
-      <div id="artists-details" class="artist-details hidden">
-        <p class="homepage">< Take me back <</p>
-        <div class="artist-info">
-          <h2>Artist name</h2>
-          <div>
-            <h4>About</h4>
-            <p id="artist-bio" class="artist-bio">
-              Artist bio: Lorem ipsum dolor sit amet consectetur, adipisicing
-              elit. Incidunt omnis nobis architecto laborum dolorem, ab officiis
-              sint obcaecati sit cumque consequatur temporibus facilis veritatis
-              magni tempora, dolorum maxime culpa quis?
-            </p>
-          </div>
-        </div>
-
-        <img
-          src="https://pbs.twimg.com/media/FwP-YTHWwAAHi0y?format=jpg&name=medium"
-          alt="artist image"
-        />
-
-        <div class="more-details">
-          <p>genre</p>
-          <p>active since ${year}</p>
-          <p>origin</p>
-          <p>artist type</p>
-        </div>
-        <div class="btn-container">
-          <button class="edit-btn" id="edit-artist">Edit Artist</button>
-          <button class="delete-btn" id="delete-artist">Delete</button>
-        </div>
+      <div id="individual-card-container" class="individual-card-container">
+        <!-- INDIVIDUAL CARD DETAILS -->
       </div>
     </main>
+
     <!-- ADD ARTIST FORM -->
     <form id="add-artist-form" class="add-artist-form hidden">
       <!-- Artist name input -->
