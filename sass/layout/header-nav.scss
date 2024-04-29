@@ -2,6 +2,12 @@
   display: flex;
   background-color: grey;
 
+  button {
+    padding-right: 14px;
+    border: none;
+    background-color: transparent;
+  }
+
   .main-nav {
     display: flex;
     align-items: center;

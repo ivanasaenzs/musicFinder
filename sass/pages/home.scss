@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  margin: 0 28px;
 
   .card {
     display: flex;
@@ -13,7 +14,7 @@
     border: 2px dotted #000;
     word-wrap: break-word;
 
-    @include breakpoint() {
+    @include breakpoint-large() {
       width: calc(33.33% - 20px);
     }
 

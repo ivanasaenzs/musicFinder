@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+  text-decoration: none;
 }
 
 body {
@@ -16,6 +17,11 @@ body {
 .nav-wrapper {
   display: flex;
   background-color: grey;
+}
+.nav-wrapper button {
+  padding-right: 14px;
+  border: none;
+  background-color: transparent;
 }
 .nav-wrapper .main-nav {
   display: flex;
@@ -53,7 +59,7 @@ body {
 }
 .filter-form-wrapper .search-form {
   display: flex;
-  margin: 20px 2px;
+  margin: 20px 5px;
 }
 .filter-form-wrapper .search-form select {
   margin: 8px;
@@ -140,6 +146,7 @@ footer .footer-content .footer-second-legend {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  margin: 0 28px;
 }
 .all-cards .card {
   display: flex;
@@ -190,6 +197,11 @@ footer .footer-content .footer-second-legend {
   align-items: center;
   border: 2px solid black;
 }
+@media (max-width: 480px) {
+  .artist-details {
+    margin: 2px 15px;
+  }
+}
 .artist-details .homepage {
   font-size: 16px;
   margin: 12px 0;
@@ -205,6 +217,9 @@ footer .footer-content .footer-second-legend {
   font-size: 18px;
   margin-bottom: 5px;
 }
+.artist-details .artist-info .artist-bio {
+  margin: 2px 8px;
+}
 .artist-details img {
   width: 260px;
   height: auto;
@@ -214,7 +229,7 @@ footer .footer-content .footer-second-legend {
 .artist-details .btn-container {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin: 15px;
 }
 .artist-details .btn-container button {
   margin-right: 8px;
