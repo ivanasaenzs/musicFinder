@@ -12,9 +12,14 @@ const getArtists = (fetchUrl) => {
 
 // Function to render the list of artists on the homepage
 const renderArtists = (artists) => {
-  artists.forEach((artist) => {
-    const { biography, id, name, activeSince, members, genre } = artist;
-    $("#all-cards").innerHTML += `
+  renderSpinner();
+
+  setTimeout(() => {
+    hideSpinner();
+
+    artists.forEach((artist) => {
+      const { biography, id, name, activeSince, members, genre } = artist;
+      $("#all-cards").innerHTML += `
       <div class="card" data-cardid="${id}">
         <h2 class="card-title">${name}</h2>
         <p class="card-biography">
@@ -33,8 +38,9 @@ const renderArtists = (artists) => {
         </div>
         <button class="card-btn" data-cardid="${id}">Click for more</button>
       </div>`;
-  });
-  assignEventToButton(document.querySelectorAll(".card-btn"));
+    });
+    assignEventToButton(document.querySelectorAll(".card-btn"));
+  }, 2000);
 };
 
 // Function to assign event to each 'Click for more' button
@@ -56,7 +62,7 @@ const getDetails = (idArtist) => {
 
 // Function to render individual artist details
 const renderDetails = (artist) => {
-  $("#all-cards").innerHTML = "";
+  $("#all-cards").classList.add("hidden");
   renderSpinner();
 
   setTimeout(() => {
@@ -65,9 +71,10 @@ const renderDetails = (artist) => {
     const { biography, id, name, activeSince, members, genre, image, origin } =
       artist;
 
+    $("#individual-card-container").classList.remove("hidden");
     $("#individual-card-container").innerHTML = `
       <div class="artist-details">
-        <a href="javascript:void(0)" class="homepage">< Take me back <</a>
+ <a href="javascript:void(0)" class="homepage" onClick="backToHomepage()">< Take me back <</a> 
         <div class="artist-info">
           <h2>${name}</h2>
           <div>
@@ -101,3 +108,17 @@ const renderDetails = (artist) => {
 };
 
 getArtists(baseUrl);
+
+// BACK TO HOMEPAGE LINK (HEADER)
+const backToHomepage = () => {
+  console.log("click!!!");
+
+  $("#all-cards").classList.add("hidden");
+  $("#individual-card-container").classList.add("hidden");
+  $("#all-cards").innerHTML = "";
+  $("#all-cards").classList.remove("hidden");
+
+  getArtists(baseUrl);
+};
+
+$("#homepage-link").addEventListener("click", backToHomepage);
