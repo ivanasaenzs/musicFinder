@@ -115,6 +115,8 @@ const backToHomepage = () => {
 
   $("#all-cards").classList.add("hidden");
   $("#individual-card-container").classList.add("hidden");
+  $("#add-artist-form").classList.add("hidden");
+  $("#edit-artist-form").classList.add("hidden");
   $("#all-cards").innerHTML = "";
   $("#all-cards").classList.remove("hidden");
 
