@@ -1,0 +1,40 @@
+.delete-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+
+  .delete-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: $primary-border-radius;
+    margin: auto;
+    padding: 12px;
+    width: 40%;
+    height: 280px;
+    z-index: 1;
+    background-color: aquamarine;
+
+    h2 {
+      font-size: 28px;
+      margin: 12px;
+    }
+
+    p {
+      margin-left: 4px;
+    }
+
+    .modal-btn-container {
+      text-align: center;
+
+      button {
+        border: none;
+      }
+    }
+  }
+}

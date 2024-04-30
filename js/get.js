@@ -74,7 +74,7 @@ const renderDetails = (artist) => {
     $("#individual-card-container").classList.remove("hidden");
     $("#individual-card-container").innerHTML = `
       <div class="artist-details">
- <a href="javascript:void(0)" class="homepage" onClick="backToHomepage()">< Take me back <</a> 
+       <a href="javascript:void(0)" class="homepage" onClick="backToHomepage()">< Take me back <</a>
         <div class="artist-info">
           <h2>${name}</h2>
           <div>

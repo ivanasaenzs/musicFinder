@@ -103,7 +103,20 @@
       <div id="individual-card-container" class="individual-card-container">
         <!-- INDIVIDUAL CARD DETAILS -->
       </div>
+      <!-- DELETE MODAL -->
     </main>
+    <div class="delete-modal-container hidden">
+      <div class="delete-modal">
+        <h2>Warning!</h2>
+        <p>Are you absolutely sure you want to delete this artist?</p>
+        <div class="modal-btn-container">
+          <button class="confirm-delete" data-cardid="${artistId}">
+            Delete artist
+          </button>
+          <button class="confirm-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
 
     <!-- ADD ARTIST FORM -->
     <form id="add-artist-form" class="add-artist-form hidden">
