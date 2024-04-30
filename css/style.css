@@ -128,6 +128,42 @@ footer .footer-content .footer-second-legend {
   margin-top: 15px;
 }
 
+.delete-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+.delete-modal-container .delete-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: auto;
+  padding: 12px;
+  width: 40%;
+  height: 280px;
+  z-index: 1;
+  background-color: aquamarine;
+}
+.delete-modal-container .delete-modal h2 {
+  font-size: 28px;
+  margin: 12px;
+}
+.delete-modal-container .delete-modal p {
+  margin-left: 4px;
+}
+.delete-modal-container .delete-modal .modal-btn-container {
+  text-align: center;
+}
+.delete-modal-container .delete-modal .modal-btn-container button {
+  border: none;
+}
+
 .all-cards {
   display: flex;
   flex-wrap: wrap;
