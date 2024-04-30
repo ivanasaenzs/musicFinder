@@ -104,6 +104,7 @@ const renderDetails = (artist) => {
           <button class="delete-btn" data-cardid="${id}">Delete</button>
         </div>
       </div>`;
+    assignEventToDeleteButton(id);
   }, 2000);
 };
 
