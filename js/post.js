@@ -8,9 +8,9 @@ const hideSpinner = () => {
 };
 
 // Cancel add operation
-const cancelAdd = () => {
+const cancelOperation = () => {
   renderSpinner();
-  $("#add-artist-form").classList.add("hidden");
+  backToHomepage();
 
   setTimeout(() => {
     hideSpinner();
@@ -30,7 +30,7 @@ const showAddForm = () => {
   }, 2000);
 };
 
-$("#cancel-add").addEventListener("click", cancelAdd);
+$("#cancel-add").addEventListener("click", cancelOperation);
 $("#add-btn-nav").addEventListener("click", showAddForm);
 
 // POST METHOD

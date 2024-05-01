@@ -14,18 +14,9 @@ const deleteArtist = (artistId) => {
     });
 };
 
-// Function to assign event to the 'Delete' button
-const assignEventToDeleteButton = (artistId) => {
-  $(".delete-btn").addEventListener("click", (e) => {
-    console.log("Delete button clicked!", e.currentTarget.dataset.cardid);
-    showDeleteModal(artistId);
-  });
-};
-
 const showDeleteModal = (artistId) => {
   if ($(".delete-modal-container")) {
     $(".delete-modal-container").classList.remove("hidden");
-    // Update the data-cardid attribute of the confirm-delete button
     $(".confirm-delete").dataset.cardid = artistId;
   }
 };

@@ -105,10 +105,27 @@ const renderDetails = (artist) => {
         </div>
       </div>`;
     assignEventToDeleteButton(id);
+    assignEventToEditBtn(id);
   }, 2000);
 };
 
 getArtists(baseUrl);
+
+// Function to assign event to the 'Delete' button
+const assignEventToDeleteButton = (artistId) => {
+  $(".delete-btn").addEventListener("click", (e) => {
+    console.log("Delete button clicked!", e.currentTarget.dataset.cardid);
+    showDeleteModal(artistId);
+  });
+};
+
+// Function to assign event to the 'Edit' button
+const assignEventToEditBtn = (artistId) => {
+  $(".edit-btn").addEventListener("click", (e) => {
+    console.log("Edit button clicked!", e.currentTarget.dataset.cardid);
+    showEditForm(artistId);
+  });
+};
 
 // BACK TO HOMEPAGE LINK (HEADER)
 const backToHomepage = () => {
