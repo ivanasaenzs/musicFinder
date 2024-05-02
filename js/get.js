@@ -123,7 +123,7 @@ const assignEventToDeleteButton = (artistId) => {
 const assignEventToEditBtn = (artistId) => {
   $(".edit-btn").addEventListener("click", (e) => {
     console.log("Edit button clicked!", e.currentTarget.dataset.cardid);
-    showEditForm(artistId);
+    renderEditForm(artistId);
   });
 };
 
