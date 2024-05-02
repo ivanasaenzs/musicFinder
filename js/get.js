@@ -17,6 +17,7 @@ const renderArtists = (artists) => {
   setTimeout(() => {
     hideSpinner();
 
+    $("#all-cards").innerHTML = "";
     artists.forEach((artist) => {
       const { biography, id, name, activeSince, members, genre } = artist;
       $("#all-cards").innerHTML += `
