@@ -25,7 +25,6 @@ const renderEditForm = (artistId) => {
 };
 
 $("#cancel-edit-btn").addEventListener("click", (e) => {
-  console.log("cancel operation button clicked!!");
   e.preventDefault();
   cancelOperation();
 });
@@ -57,16 +56,11 @@ const editArtist = (artistId) => {
         renderDetails(updatedArtist);
       }
     })
-    .catch((err) => console.log(err));
-  console.log(updatedArtist);
+    .catch((err) => console.error(err));
 };
 
 // Attach event listener to the edit form
 $("#edit-artist-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(
-    "Editing artist with ID:",
-    $(".edit-btn").getAttribute("data-cardid")
-  );
   editArtist($(".edit-btn").getAttribute("data-cardid"));
 });
