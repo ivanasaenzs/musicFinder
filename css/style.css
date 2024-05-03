@@ -1,12 +1,334 @@
+.hidden {
+  display: none !important;
+}
+
+.nav-wrapper {
+  display: flex;
+  background-color: #c8a2c8;
+}
+.nav-wrapper .main-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  flex: 1;
+}
+@media (max-width: 480px) {
+  .nav-wrapper .main-nav {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+}
+.nav-wrapper .main-nav h1 {
+  font: normal normal 400 35px/30px "Major Mono Display", monospace;
+  color: #8f00ff;
+  margin-right: 10px;
+}
+.nav-wrapper .main-nav p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #fff0f5;
+}
+.nav-wrapper .main-nav button {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: auto;
+  padding: 15px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: transparent;
+}
+@media (max-width: 480px) {
+  .nav-wrapper .main-nav button {
+    margin-top: 8px;
+  }
+}
+
+.filter-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-form-wrapper .search-form {
+  display: flex;
+  margin: 20px 5px;
+}
+.filter-form-wrapper .search-form select {
+  font-family: "Roboto", sans-serif;
+  margin: 8px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+.filter-form-wrapper .search-form .btn-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 8px;
+  padding: 5px;
+}
+.filter-form-wrapper .search-form .btn-container .search-btn,
+.filter-form-wrapper .search-form .btn-container .clear-btn {
+  font-family: "Roboto", sans-serif;
+  margin: 4px;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+
+.add-artist-form,
+.edit-artist-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 38%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+.add-artist-form label,
+.edit-artist-form label {
+  font-family: "Roboto", sans-serif;
+  margin: 10px 2px;
+}
+.add-artist-form input,
+.add-artist-form select,
+.edit-artist-form input,
+.edit-artist-form select {
+  font-family: "Roboto", sans-serif;
+  width: 85%;
+  height: 30px;
+  margin: 0 auto;
+}
+.add-artist-form textarea,
+.edit-artist-form textarea {
+  width: 85%;
+  height: 10%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.add-artist-form .btn-container,
+.edit-artist-form .btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.add-artist-form .btn-container button,
+.edit-artist-form .btn-container button {
+  font-family: "Roboto", sans-serif;
+  margin-right: 8px;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #c8a2c8;
+  padding: 15px 0;
+}
+footer .footer-content {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+footer .footer-content .footer-second-legend {
+  font-family: "Roboto", sans-serif;
+  margin-top: 12px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.delete-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+.delete-modal-container .delete-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  padding: 12px;
+  width: 40%;
+  height: 280px;
+  z-index: 1;
+  border-radius: 5px;
+  background-color: #b284be;
+}
+.delete-modal-container .delete-modal h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  margin: 12px;
+  color: #8f00ff;
+}
+.delete-modal-container .delete-modal p {
+  font-family: "Roboto", sans-serif;
+  margin-left: 4px;
+}
+.delete-modal-container .delete-modal .modal-btn-container {
+  text-align: center;
+}
+.delete-modal-container .delete-modal .modal-btn-container button {
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 28px;
+}
+.all-cards .card {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+  padding-bottom: 20px;
+  position: relative;
+  width: 100%;
+  border: 1px solid #8f00ff;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  word-wrap: break-word;
+}
+@media (min-width: 900px) {
+  .all-cards .card {
+    width: calc(33.33% - 20px);
+  }
+}
+.all-cards .card .card-title {
+  font-family: "Gaegu", sans-serif;
+  font-size: 30px;
+  padding-bottom: 5px;
+  margin: 6px 12px;
+}
+.all-cards .card .card-biography {
+  margin: 4px 12px 14px 12px;
+}
+.all-cards .card .more-details-homepage {
+  display: flex;
+  margin: auto 4px 10px 12px;
+  text-align: center;
+}
+.all-cards .card .more-details-homepage p {
+  margin: 0 4px 8px 2px;
+  padding: 5px;
+  border: 3px solid #8f00ff;
+  border-radius: 5px;
+}
+.all-cards .card .card-btn {
+  font-family: "Roboto", sans-serif;
+  margin: 12px 0 0 auto;
+  padding: 3px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+
+.artist-details {
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #8f00ff;
+  background-color: #c8a2c8;
+}
+@media (max-width: 480px) {
+  .artist-details {
+    margin: 2px 15px;
+  }
+}
+.artist-details .homepage {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #000;
+  text-decoration-line: underline;
+}
+.artist-details .artist-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.artist-details .artist-info h2 {
+  font-family: "Gaegu", sans-serif;
+  font-size: 30px;
+  color: #8f00ff;
+}
+.artist-details .artist-info h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.artist-details .artist-info .artist-bio {
+  margin: 2px 8px;
+}
+.artist-details img {
+  width: 350px;
+  height: auto;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+}
+.artist-details .btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+.artist-details .btn-container button {
+  font-family: "Roboto", sans-serif;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
+}
+
+.more-details {
+  display: flex;
+  align-items: center;
+}
+.more-details p {
+  margin: 20px 5px 20px 10px;
+  padding: 5px;
+  border: 3px solid #8f00ff;
+  border-radius: 5px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style-type: none;
+  text-decoration: none;
 }
 
-.hidden {
-  display: none;
+body {
+  padding-bottom: 150px;
+  background-color: #b284be;
 }
 
 /*# sourceMappingURL=style.css.map */

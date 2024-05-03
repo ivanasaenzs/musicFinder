@@ -1,0 +1,84 @@
+.filter-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .search-form {
+    display: flex;
+    margin: 20px 5px;
+
+    select {
+      font-family: $main-font;
+      margin: 8px;
+      border: 2px solid #8f00ff;
+      border-radius: $primary-border-radius;
+      background-color: $secondary-bg-color;
+    }
+
+    .btn-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin: 8px;
+      padding: 5px;
+
+      .search-btn,
+      .clear-btn {
+        font-family: $main-font;
+        margin: 4px;
+        padding: 5px;
+        border: 2px solid #8f00ff;
+        border-radius: $primary-border-radius;
+        background-color: $secondary-bg-color;
+      }
+    }
+  }
+}
+
+.add-artist-form,
+.edit-artist-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 38%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: $primary-border-radius;
+  background-color: $secondary-bg-color;
+
+  label {
+    font-family: $main-font;
+    margin: 10px 2px;
+  }
+
+  input,
+  select {
+    font-family: $main-font;
+    width: 85%;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  textarea {
+    width: 85%;
+    height: 10%;
+    margin: 0 auto;
+    border-radius: $primary-border-radius;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+      font-family: $main-font;
+      margin-right: 8px;
+      padding: 5px;
+      border: 2px solid #8f00ff;
+      border-radius: $primary-border-radius;
+      background-color: $secondary-bg-color;
+    }
+  }
+}

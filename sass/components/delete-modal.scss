@@ -1,0 +1,47 @@
+.delete-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+
+  .delete-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding: 12px;
+    width: 40%;
+    height: 280px;
+    z-index: 1;
+    border-radius: $primary-border-radius;
+    background-color: $primary-bg-color;
+
+    h2 {
+      font-family: $main-font;
+      font-size: 28px;
+      margin: 12px;
+      color: #8f00ff;
+    }
+
+    p {
+      font-family: $main-font;
+      margin-left: 4px;
+    }
+
+    .modal-btn-container {
+      text-align: center;
+
+      button {
+        font-family: $main-font;
+        padding: 5px;
+        border: 2px solid #8f00ff;
+        border-radius: $primary-border-radius;
+        background-color: $secondary-bg-color;
+      }
+    }
+  }
+}

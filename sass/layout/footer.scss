@@ -1,0 +1,20 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $secondary-bg-color;
+  padding: 15px 0;
+
+  .footer-content {
+    font-family: $main-font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    .footer-second-legend {
+      font-family: $main-font;
+      margin-top: 12px;
+    }
+  }
+}

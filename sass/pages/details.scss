@@ -1,0 +1,75 @@
+.artist-details {
+  font-family: $main-font;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #8f00ff;
+  background-color: $secondary-bg-color;
+
+  @include breakpoint-small {
+    margin: 2px 15px;
+  }
+
+  .homepage {
+    font-size: 14px;
+    margin: 12px 0;
+    color: #000;
+    text-decoration-line: underline;
+  }
+
+  .artist-info {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-family: $heading-two-font;
+      font-size: 30px;
+      color: #8f00ff;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .artist-bio {
+      margin: 2px 8px;
+    }
+  }
+
+  img {
+    width: 350px;
+    height: auto;
+    padding: 5px;
+    border: 2px solid #8f00ff;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+
+    button {
+      font-family: $main-font;
+      margin-right: 8px;
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 2px solid #8f00ff;
+      border-radius: $primary-border-radius;
+      background-color: $secondary-bg-color;
+    }
+  }
+}
+
+.more-details {
+  display: flex;
+  align-items: center;
+  p {
+    margin: 20px 5px 20px 10px;
+    padding: 5px;
+    border: 3px solid #8f00ff;
+    border-radius: $primary-border-radius;
+  }
+}

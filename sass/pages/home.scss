@@ -1,0 +1,59 @@
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 28px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 100%;
+    border: 1px solid #8f00ff;
+    border-radius: $primary-border-radius;
+    font-family: $main-font;
+    word-wrap: break-word;
+
+    @include breakpoint-large() {
+      width: calc(33.33% - 20px);
+    }
+
+    .card-title {
+      font-family: $heading-two-font;
+      font-size: 30px;
+      padding-bottom: 5px;
+      margin: 6px 12px;
+    }
+
+    .card-biography {
+      margin: 4px 12px 14px 12px;
+    }
+
+    .more-details-homepage {
+      display: flex;
+      margin: auto 4px 10px 12px;
+      text-align: center;
+
+      p {
+        margin: 0 4px 8px 2px;
+        padding: 5px;
+        border: 3px solid #8f00ff;
+        border-radius: $primary-border-radius;
+      }
+    }
+
+    .card-btn {
+      font-family: $main-font;
+      margin: 12px 0 0 auto;
+      padding: 3px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border: none;
+      border-radius: $primary-border-radius;
+      background-color: $secondary-bg-color;
+    }
+  }
+}

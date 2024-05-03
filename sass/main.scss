@@ -1,10 +1,14 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
+@import "./utils/mixins.scss";
+@import "./utils/helpers.scss";
+@import "./utils/variables.scss";
 
-.hidden {
-  display: none;
-}
+@import "./layout/header-nav.scss";
+@import "./layout/forms.scss";
+@import "./layout/footer.scss";
+
+@import "./components/spinner.scss";
+@import "./components/delete-modal.scss";
+@import "./pages/home.scss";
+@import "./pages/details.scss";
+
+@import "./base/reset.scss";
