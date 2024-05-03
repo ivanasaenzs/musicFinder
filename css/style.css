@@ -1,27 +1,10 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  text-decoration: none;
-}
-
-body {
-  padding-bottom: 200px;
-}
-
 .hidden {
   display: none !important;
 }
 
 .nav-wrapper {
   display: flex;
-  background-color: grey;
-}
-.nav-wrapper button {
-  padding-right: 14px;
-  border: none;
-  background-color: transparent;
+  background-color: #c8a2c8;
 }
 .nav-wrapper .main-nav {
   display: flex;
@@ -29,26 +12,36 @@ body {
   padding: 10px 18px;
   flex: 1;
 }
+@media (max-width: 480px) {
+  .nav-wrapper .main-nav {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+}
 .nav-wrapper .main-nav h1 {
+  font: normal normal 400 35px/30px "Major Mono Display", monospace;
+  color: #8f00ff;
   margin-right: 10px;
-  font-size: 25px;
 }
 .nav-wrapper .main-nav p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
   margin-top: 5px;
-  font-size: 16px;
-  color: #555;
+  color: #fff0f5;
 }
-.nav-wrapper .nav-list {
-  display: flex;
-  list-style: none;
+.nav-wrapper .main-nav button {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: auto;
+  padding: 15px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: transparent;
 }
-.nav-wrapper .nav-list .nav-item {
-  font-weight: 300;
-  margin: 15px;
-}
-.nav-wrapper .nav-list .nav-item a {
-  text-decoration: none;
-  color: #000;
+@media (max-width: 480px) {
+  .nav-wrapper .main-nav button {
+    margin-top: 8px;
+  }
 }
 
 .filter-form-wrapper {
@@ -62,21 +55,27 @@ body {
   margin: 20px 5px;
 }
 .filter-form-wrapper .search-form select {
+  font-family: "Roboto", sans-serif;
   margin: 8px;
+  border: 2px solid #8f00ff;
   border-radius: 5px;
+  background-color: #c8a2c8;
 }
 .filter-form-wrapper .search-form .btn-container {
-  margin: 8px;
-  width: 100%;
-  padding: 5px;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  margin: 8px;
+  padding: 5px;
 }
 .filter-form-wrapper .search-form .btn-container .search-btn,
 .filter-form-wrapper .search-form .btn-container .clear-btn {
+  font-family: "Roboto", sans-serif;
   margin: 4px;
-  padding: 3px;
+  padding: 5px;
+  border: 2px solid #8f00ff;
   border-radius: 5px;
+  background-color: #c8a2c8;
 }
 
 .add-artist-form,
@@ -84,24 +83,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 38%;
   margin: 0 auto;
   padding: 30px 20px;
   border-radius: 5px;
-  background-color: lightblue;
+  background-color: #c8a2c8;
 }
 .add-artist-form label,
 .edit-artist-form label {
+  font-family: "Roboto", sans-serif;
   margin: 10px 2px;
 }
 .add-artist-form input,
-.add-artist-form textarea,
 .add-artist-form select,
 .edit-artist-form input,
-.edit-artist-form textarea,
 .edit-artist-form select {
+  font-family: "Roboto", sans-serif;
   width: 85%;
-  height: 25px;
+  height: 30px;
+  margin: 0 auto;
+}
+.add-artist-form textarea,
+.edit-artist-form textarea {
+  width: 85%;
+  height: 10%;
   margin: 0 auto;
   border-radius: 5px;
 }
@@ -113,26 +118,30 @@ body {
 }
 .add-artist-form .btn-container button,
 .edit-artist-form .btn-container button {
+  font-family: "Roboto", sans-serif;
   margin-right: 8px;
   padding: 5px;
+  border: 2px solid #8f00ff;
   border-radius: 5px;
-  border: none;
+  background-color: #c8a2c8;
 }
 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #333;
+  background-color: #c8a2c8;
   padding: 15px 0;
 }
 footer .footer-content {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px;
 }
 footer .footer-content .footer-second-legend {
+  font-family: "Roboto", sans-serif;
   margin-top: 12px;
 }
 
@@ -140,6 +149,49 @@ footer .footer-content .footer-second-legend {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
+
+.delete-modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+.delete-modal-container .delete-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  padding: 12px;
+  width: 40%;
+  height: 280px;
+  z-index: 1;
+  border-radius: 5px;
+  background-color: #b284be;
+}
+.delete-modal-container .delete-modal h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  margin: 12px;
+  color: #8f00ff;
+}
+.delete-modal-container .delete-modal p {
+  font-family: "Roboto", sans-serif;
+  margin-left: 4px;
+}
+.delete-modal-container .delete-modal .modal-btn-container {
+  text-align: center;
+}
+.delete-modal-container .delete-modal .modal-btn-container button {
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  border: 2px solid #8f00ff;
+  border-radius: 5px;
+  background-color: #c8a2c8;
 }
 
 .all-cards {
@@ -155,7 +207,9 @@ footer .footer-content .footer-second-legend {
   padding-bottom: 20px;
   position: relative;
   width: 100%;
-  border: 2px dotted #000;
+  border: 1px solid #8f00ff;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
   word-wrap: break-word;
 }
 @media (min-width: 900px) {
@@ -164,6 +218,8 @@ footer .footer-content .footer-second-legend {
   }
 }
 .all-cards .card .card-title {
+  font-family: "Gaegu", sans-serif;
+  font-size: 30px;
   padding-bottom: 5px;
   margin: 6px 12px;
 }
@@ -176,26 +232,32 @@ footer .footer-content .footer-second-legend {
   text-align: center;
 }
 .all-cards .card .more-details-homepage p {
-  margin: 0 0 8px 10px;
+  margin: 0 4px 8px 2px;
   padding: 5px;
-  border: 1px solid #000;
+  border: 3px solid #8f00ff;
   border-radius: 5px;
 }
 .all-cards .card .card-btn {
-  margin: 10px 0 0 auto;
+  font-family: "Roboto", sans-serif;
+  margin: 12px 0 0 auto;
+  padding: 3px;
   position: absolute;
   bottom: 10px;
   right: 10px;
   border: none;
+  border-radius: 5px;
+  background-color: #c8a2c8;
 }
 
 .artist-details {
+  font-family: "Roboto", sans-serif;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid #8f00ff;
+  background-color: #c8a2c8;
 }
 @media (max-width: 480px) {
   .artist-details {
@@ -203,15 +265,19 @@ footer .footer-content .footer-second-legend {
   }
 }
 .artist-details .homepage {
-  font-size: 16px;
+  font-size: 14px;
   margin: 12px 0;
+  color: #000;
+  text-decoration-line: underline;
 }
 .artist-details .artist-info {
   text-align: center;
   margin-bottom: 20px;
 }
 .artist-details .artist-info h2 {
+  font-family: "Gaegu", sans-serif;
   font-size: 30px;
+  color: #8f00ff;
 }
 .artist-details .artist-info h4 {
   font-size: 18px;
@@ -221,10 +287,10 @@ footer .footer-content .footer-second-legend {
   margin: 2px 8px;
 }
 .artist-details img {
-  width: 260px;
+  width: 350px;
   height: auto;
   padding: 5px;
-  border: 2px solid #000;
+  border: 2px solid #8f00ff;
 }
 .artist-details .btn-container {
   display: flex;
@@ -232,11 +298,13 @@ footer .footer-content .footer-second-legend {
   margin: 15px;
 }
 .artist-details .btn-container button {
+  font-family: "Roboto", sans-serif;
   margin-right: 8px;
   margin-bottom: 5px;
   padding: 5px;
+  border: 2px solid #8f00ff;
   border-radius: 5px;
-  border: none;
+  background-color: #c8a2c8;
 }
 
 .more-details {
@@ -246,8 +314,21 @@ footer .footer-content .footer-second-legend {
 .more-details p {
   margin: 20px 5px 20px 10px;
   padding: 5px;
-  border: 1px solid #000;
+  border: 3px solid #8f00ff;
   border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  padding-bottom: 150px;
+  background-color: #b284be;
 }
 
 /*# sourceMappingURL=style.css.map */

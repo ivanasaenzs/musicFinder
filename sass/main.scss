@@ -1,5 +1,3 @@
-@import "./base/reset.scss";
-
 @import "./utils/mixins.scss";
 @import "./utils/helpers.scss";
 @import "./utils/variables.scss";
@@ -9,6 +7,8 @@
 @import "./layout/footer.scss";
 
 @import "./components/spinner.scss";
-
+@import "./components/delete-modal.scss";
 @import "./pages/home.scss";
 @import "./pages/details.scss";
+
+@import "./base/reset.scss";
