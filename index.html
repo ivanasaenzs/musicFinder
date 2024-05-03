@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Music finder</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/headphones_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Major+Mono+Display&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font awesome -->
     <script
       src="https://kit.fontawesome.com/085ccf50a5.js"
@@ -20,15 +32,15 @@
             ><h1>musicFinder</h1></a
           >
           <p>Find new music to love!</p>
+          <button id="add-btn-nav">Add artist</button>
         </div>
-        <button id="add-btn-nav">Add artist</button>
       </nav>
     </header>
     <!-- SEARCH FILTERS -->
     <div class="filter-form-wrapper">
       <form id="search-form" class="search-form">
         <select name="search-filters" id="search-filters">
-          <option value="search-by" selected disabled>Search by</option>
+          <option value="search-by" selected>Search by</option>
           <option value="genre">Genre</option>
           <option value="formation-period">Formation period</option>
           <option value="country">Origin</option>
@@ -51,7 +63,7 @@
           id="search-active-since"
           class="hidden"
         >
-          <option value="active-since" selected disabled>
+          <option value="searchby-activesince" selected disabled>
             When did they form?
           </option>
           <option value="1970s">1970s or before</option>
@@ -63,7 +75,7 @@
         </select>
         <!-- ORIGIN -->
         <select name="origin-select" id="origin-search" class="hidden">
-          <option value="searchby-genre" selected disabled>
+          <option value="searchby-origin" selected disabled>
             Where are they from?
           </option>
           <option value="africa">Africa</option>
@@ -125,7 +137,7 @@
       <input type="text" id="artist-name" />
       <!-- Biography input -->
       <label for="add-biography">Biography:</label>
-      <textarea id="add-biography" cols="20" rows="5"></textarea>
+      <textarea id="add-biography" cols="30" rows="5"></textarea>
       <!-- Genre select -->
       <label for="add-genre">Genre:</label>
       <select name="genre" id="add-genre">
@@ -250,5 +262,6 @@
     <script src="./js/post.js"></script>
     <script src="./js/put.js"></script>
     <script src="./js/delete.js"></script>
+    <script src="./js/filter.js"></script>
   </body>
 </html>

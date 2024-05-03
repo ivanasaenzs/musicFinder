@@ -17,6 +17,7 @@ const renderArtists = (artists) => {
   setTimeout(() => {
     hideSpinner();
 
+    $("#all-cards").innerHTML = "";
     artists.forEach((artist) => {
       const { biography, id, name, activeSince, members, genre } = artist;
       $("#all-cards").innerHTML += `
@@ -114,7 +115,6 @@ getArtists(baseUrl);
 // Function to assign event to the 'Delete' button
 const assignEventToDeleteButton = (artistId) => {
   $(".delete-btn").addEventListener("click", (e) => {
-    console.log("Delete button clicked!", e.currentTarget.dataset.cardid);
     showDeleteModal(artistId);
   });
 };
@@ -122,15 +122,12 @@ const assignEventToDeleteButton = (artistId) => {
 // Function to assign event to the 'Edit' button
 const assignEventToEditBtn = (artistId) => {
   $(".edit-btn").addEventListener("click", (e) => {
-    console.log("Edit button clicked!", e.currentTarget.dataset.cardid);
     renderEditForm(artistId);
   });
 };
 
 // BACK TO HOMEPAGE LINK (HEADER)
 const backToHomepage = () => {
-  console.log("click!!!");
-
   $("#all-cards").classList.add("hidden");
   $("#individual-card-container").classList.add("hidden");
   $("#add-artist-form").classList.add("hidden");
