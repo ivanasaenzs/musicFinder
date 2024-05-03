@@ -22,6 +22,7 @@ const cancelOperation = () => {
 const showAddForm = () => {
   $("#all-cards").classList.add("hidden");
   $("#individual-card-container").classList.add("hidden");
+  $("#edit-artist-form").classList.add("hidden");
   renderSpinner();
 
   setTimeout(() => {
@@ -72,5 +73,4 @@ $("#add-artist-form").addEventListener("submit", (e) => {
       }
     })
     .catch((err) => alert(err));
-  console.log(newArtist);
 });

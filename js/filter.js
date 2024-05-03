@@ -4,9 +4,7 @@ let userPickedFilter = "";
 
 // Event listener to handle filter selection change (render/hide)
 $("#search-filters").addEventListener("change", () => {
-  console.log("Search filters clicked");
   mainFilter = $("#search-filters").value;
-  console.log(mainFilter);
 
   $("#search-genre").classList.add("hidden");
   $("#search-active-since").classList.add("hidden");
