@@ -9,8 +9,11 @@
     margin: 20px 5px;
 
     select {
+      font-family: $main-font;
       margin: 8px;
+      border: 2px solid #8f00ff;
       border-radius: $primary-border-radius;
+      background-color: $secondary-bg-color;
     }
 
     .btn-container {
@@ -22,9 +25,12 @@
 
       .search-btn,
       .clear-btn {
+        font-family: $main-font;
         margin: 4px;
-        padding: 3px;
+        padding: 5px;
+        border: 2px solid #8f00ff;
         border-radius: $primary-border-radius;
+        background-color: $secondary-bg-color;
       }
     }
   }
@@ -35,21 +41,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 38%;
   margin: 0 auto;
   padding: 30px 20px;
   border-radius: $primary-border-radius;
-  background-color: lightblue;
+  background-color: $secondary-bg-color;
 
   label {
+    font-family: $main-font;
     margin: 10px 2px;
   }
 
   input,
-  textarea,
   select {
+    font-family: $main-font;
     width: 85%;
-    height: 25px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  textarea {
+    width: 85%;
+    height: 10%;
     margin: 0 auto;
     border-radius: $primary-border-radius;
   }
@@ -60,10 +73,12 @@
     margin-top: 15px;
 
     button {
+      font-family: $main-font;
       margin-right: 8px;
       padding: 5px;
+      border: 2px solid #8f00ff;
       border-radius: $primary-border-radius;
-      border: none;
+      background-color: $secondary-bg-color;
     }
   }
 }
