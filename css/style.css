@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+  text-decoration: none;
 }
 
 body {
@@ -16,6 +17,11 @@ body {
 .nav-wrapper {
   display: flex;
   background-color: grey;
+}
+.nav-wrapper button {
+  padding-right: 14px;
+  border: none;
+  background-color: transparent;
 }
 .nav-wrapper .main-nav {
   display: flex;
@@ -45,22 +51,30 @@ body {
   color: #000;
 }
 
-.search-form {
+.filter-form-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-form-wrapper .search-form {
+  display: flex;
   margin: 20px 5px;
 }
-.search-form select {
-  width: 20%;
+.filter-form-wrapper .search-form select {
   margin: 8px;
   border-radius: 5px;
 }
-.search-form .btn-container {
+.filter-form-wrapper .search-form .btn-container {
   margin: 8px;
+  width: 100%;
   padding: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.search-form .btn-container .search-btn,
-.search-form .btn-container .clear-btn {
+.filter-form-wrapper .search-form .btn-container .search-btn,
+.filter-form-wrapper .search-form .btn-container .clear-btn {
+  margin: 4px;
   padding: 3px;
   border-radius: 5px;
 }
@@ -168,6 +182,7 @@ footer .footer-content .footer-second-legend {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  margin: 0 28px;
 }
 .all-cards .card {
   display: flex;
@@ -175,10 +190,11 @@ footer .footer-content .footer-second-legend {
   margin: 5px 10px;
   padding-bottom: 20px;
   position: relative;
-  width: calc(100% - 20px);
+  width: 100%;
   border: 2px dotted #000;
+  word-wrap: break-word;
 }
-@media (min-width: 970px) {
+@media (min-width: 900px) {
   .all-cards .card {
     width: calc(33.33% - 20px);
   }
@@ -217,6 +233,11 @@ footer .footer-content .footer-second-legend {
   align-items: center;
   border: 2px solid black;
 }
+@media (max-width: 480px) {
+  .artist-details {
+    margin: 2px 15px;
+  }
+}
 .artist-details .homepage {
   font-size: 16px;
   margin: 12px 0;
@@ -232,6 +253,9 @@ footer .footer-content .footer-second-legend {
   font-size: 18px;
   margin-bottom: 5px;
 }
+.artist-details .artist-info .artist-bio {
+  margin: 2px 8px;
+}
 .artist-details img {
   width: 260px;
   height: auto;
@@ -241,7 +265,7 @@ footer .footer-content .footer-second-legend {
 .artist-details .btn-container {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin: 15px;
 }
 .artist-details .btn-container button {
   margin-right: 8px;

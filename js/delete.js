@@ -13,13 +13,6 @@ const deleteArtist = (artistId) => {
     });
 };
 
-// Function to assign event to the 'Delete' button
-const assignEventToDeleteButton = (artistId) => {
-  $(".delete-btn").addEventListener("click", (e) => {
-    showDeleteModal(artistId);
-  });
-};
-
 const showDeleteModal = (artistId) => {
   if ($(".delete-modal-container")) {
     $(".delete-modal-container").classList.remove("hidden");

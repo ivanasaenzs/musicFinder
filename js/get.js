@@ -17,6 +17,7 @@ const renderArtists = (artists) => {
   setTimeout(() => {
     hideSpinner();
 
+    $("#all-cards").innerHTML = "";
     artists.forEach((artist) => {
       const { biography, id, name, activeSince, members, genre } = artist;
       $("#all-cards").innerHTML += `
@@ -104,10 +105,28 @@ const renderDetails = (artist) => {
           <button class="delete-btn" data-cardid="${id}">Delete</button>
         </div>
       </div>`;
+    assignEventToDeleteButton(id);
+    assignEventToEditBtn(id);
   }, 2000);
 };
 
 getArtists(baseUrl);
+
+// Function to assign event to the 'Delete' button
+const assignEventToDeleteButton = (artistId) => {
+  $(".delete-btn").addEventListener("click", (e) => {
+    console.log("Delete button clicked!", e.currentTarget.dataset.cardid);
+    showDeleteModal(artistId);
+  });
+};
+
+// Function to assign event to the 'Edit' button
+const assignEventToEditBtn = (artistId) => {
+  $(".edit-btn").addEventListener("click", (e) => {
+    console.log("Edit button clicked!", e.currentTarget.dataset.cardid);
+    renderEditForm(artistId);
+  });
+};
 
 // BACK TO HOMEPAGE LINK (HEADER)
 const backToHomepage = () => {
