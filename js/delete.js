@@ -5,7 +5,6 @@ const deleteArtist = (artistId) => {
   })
     .then((res) => {
       if (res.ok) {
-        console.log("Artist deleted!");
         backToHomepage();
       }
     })
@@ -17,7 +16,6 @@ const deleteArtist = (artistId) => {
 // Function to assign event to the 'Delete' button
 const assignEventToDeleteButton = (artistId) => {
   $(".delete-btn").addEventListener("click", (e) => {
-    console.log("Delete button clicked!", e.currentTarget.dataset.cardid);
     showDeleteModal(artistId);
   });
 };
@@ -38,6 +36,5 @@ $(".confirm-cancel").addEventListener("click", () => {
 // Event listener for confirm delete button inside the modal
 $(".confirm-delete").addEventListener("click", (e) => {
   $(".delete-modal-container").classList.add("hidden");
-  console.log("Deleting artist with ID:", e.currentTarget.dataset.cardid);
   deleteArtist(e.currentTarget.dataset.cardid);
 });
