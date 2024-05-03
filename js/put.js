@@ -1,11 +1,30 @@
 // Render edit form
-const renderEditForm = () => {
-  $("#individual-card-container").classList.add("hidden");
-  $("#edit-artist-form").classList.remove("hidden");
+const renderEditForm = (artistId) => {
+  // Fetch artist details
+  fetch(`${baseUrl}/${artistId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      // The form is called with the previously entered values so the user knows what they're editing
+      $("#edit-artist-name").value = data.name;
+      $("#edit-active-since").value = data.activeSince;
+      $("#edit-biography").value = data.biography;
+      $("#edit-genre").value = data.genre;
+      $("#edit-artist-origin").value = data.origin;
+      $("#edit-type-members").value = data.members;
+      $("#edit-artist-img").value = data.image;
+
+      $("#individual-card-container").classList.add("hidden");
+      renderSpinner();
+
+      setTimeout(() => {
+        hideSpinner();
+        $("#edit-artist-form").classList.remove("hidden");
+      }, 2000);
+    })
+    .catch((err) => console.error(err));
 };
 
 $("#cancel-edit-btn").addEventListener("click", (e) => {
-  console.log("cancel operation button clicked!!");
   e.preventDefault();
   cancelOperation();
 });
@@ -37,16 +56,11 @@ const editArtist = (artistId) => {
         renderDetails(updatedArtist);
       }
     })
-    .catch((err) => console.log(err));
-  console.log(updatedArtist);
+    .catch((err) => console.error(err));
 };
 
-// Attach event listener to the edit button
+// Attach event listener to the edit form
 $("#edit-artist-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(
-    "Editing artist with ID:",
-    $(".edit-btn").getAttribute("data-cardid")
-  );
   editArtist($(".edit-btn").getAttribute("data-cardid"));
 });
