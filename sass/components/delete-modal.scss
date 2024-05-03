@@ -12,20 +12,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: $primary-border-radius;
     margin: auto;
     padding: 12px;
     width: 40%;
     height: 280px;
     z-index: 1;
-    background-color: aquamarine;
+    border-radius: $primary-border-radius;
+    background-color: $primary-bg-color;
 
     h2 {
+      font-family: $main-font;
       font-size: 28px;
       margin: 12px;
+      color: #8f00ff;
     }
 
     p {
+      font-family: $main-font;
       margin-left: 4px;
     }
 
@@ -33,7 +36,11 @@
       text-align: center;
 
       button {
-        border: none;
+        font-family: $main-font;
+        padding: 5px;
+        border: 2px solid #8f00ff;
+        border-radius: $primary-border-radius;
+        background-color: $secondary-bg-color;
       }
     }
   }
