@@ -73,5 +73,4 @@ $("#add-artist-form").addEventListener("submit", (e) => {
       }
     })
     .catch((err) => alert(err));
-  console.log(newArtist);
 });
