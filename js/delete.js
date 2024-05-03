@@ -5,7 +5,6 @@ const deleteArtist = (artistId) => {
   })
     .then((res) => {
       if (res.ok) {
-        console.log("Artist deleted!");
         backToHomepage();
       }
     })
@@ -17,6 +16,7 @@ const deleteArtist = (artistId) => {
 const showDeleteModal = (artistId) => {
   if ($(".delete-modal-container")) {
     $(".delete-modal-container").classList.remove("hidden");
+    // Update the data-cardid attribute of the confirm-delete button
     $(".confirm-delete").dataset.cardid = artistId;
   }
 };
@@ -29,6 +29,5 @@ $(".confirm-cancel").addEventListener("click", () => {
 // Event listener for confirm delete button inside the modal
 $(".confirm-delete").addEventListener("click", (e) => {
   $(".delete-modal-container").classList.add("hidden");
-  console.log("Deleting artist with ID:", e.currentTarget.dataset.cardid);
   deleteArtist(e.currentTarget.dataset.cardid);
 });
